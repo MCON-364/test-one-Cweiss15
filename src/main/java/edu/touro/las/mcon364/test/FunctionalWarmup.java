@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class FunctionalWarmup {
 
@@ -52,8 +53,8 @@ public class FunctionalWarmup {
      *
      */
     public static Function<String, Integer> wordCounter() {
-        Function<String, Integer> wordCounter = s -> Integer.valueOf(s.trim().split("//s+").length);
-        return wordCounter;
+        Function<String, Integer> wordCount = s -> s.trim().split("\\s+").length;
+        return wordCount;
     }
 
     /**
